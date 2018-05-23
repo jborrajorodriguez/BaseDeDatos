@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +16,7 @@ public class Funciones {
 
     static String url = "E:\\Sqliteman-1.2.2\\F1.db";
     static Connection connect;
+    public static ArrayList<Equipo>equipo=new ArrayList();
 
     public static void conectar() {
         try {
@@ -96,42 +98,32 @@ public class Funciones {
     }
 
     public static void mostrarEquipos() {
-        
-
-        
+        Funciones.conectar();
         ResultSet result = null;
+        
         try {
 
             PreparedStatement st = connect.prepareStatement("select * from equipo");
             result = st.executeQuery();
-
-            //System.out.println(result);
+            equipo.clear();
+            
+            
             while (result.next()) {
-                System.out.print("codeq: ");
-                System.out.println(result.getString("codeq"));
-
-                System.out.print("Nombre: ");
-                System.out.println(result.getString("Nombre"));
-                
-                System.out.print("Piloto 1: ");
-                System.out.println(result.getString("piloto1"));
-                
-                System.out.print("Piloto 2: ");
-                System.out.println(result.getString("piloto2"));
-                
-                
-                
-              
-
-               
-                System.out.println("=======================");
+               equipo.add(new Equipo(result.getString("codeq"),result.getString("nombre"),result.getString("piloto1"),result.getString("piloto2")));
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        Funciones.cerrar();
 
+    }
+    
+    public static void ver(){
+        for (int i = 0; i < equipo.size(); i++) {
+            System.out.println(equipo.get(i).toString());
+            
+        }
     }
 
     

@@ -55,6 +55,11 @@ public class Equipo {
         this.piloto2 = piloto2;
     }
 
+    @Override
+    public String toString() {
+        return "Equipo{" + "codeq=" + codeq + ", nombre=" + nombre + ", piloto1=" + piloto1 + ", piloto2=" + piloto2 + '}';
+    }
+
     
     
     

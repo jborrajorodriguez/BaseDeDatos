@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import basededatos.Equipo;
 import basededatos.Funciones;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,9 +16,12 @@ import javax.swing.table.DefaultTableModel;
 public class Ventana extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
+    
+
     public Ventana() {
         initComponents();
         modelo =(DefaultTableModel) jTable1.getModel();
+
         this.setLocationRelativeTo(null);
         this.setTitle("F1 Data Base");
         this.setVisible(true);
@@ -87,12 +91,12 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(169, 169, 169)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(jButton1)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,8 +104,8 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 424, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(45, 45, 45))
         );
@@ -121,20 +125,20 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+Funciones.mostrarEquipos();
+        Object O[] = null;
         
-//        Funciones.conectar();
-//        String as="2123";
-//        modelo.addRow(new Object[]{as});
-////        while(Funciones.mostrarEquipos()>0){
-////        modelo.addRow(new Object[]{"1"});
-////        
-////        }
-//        
-//        
-//        //modelo.addRow(new Object[]{});
-//        Funciones.cerrar();
-        
-        
+        for (int i = 0; i < Funciones.equipo.size(); i++) {
+            modelo.addRow(O);
+            Equipo getE = (Equipo) Funciones.equipo.get(i);
+            modelo.setValueAt(getE.getCodeq(), i, 0);
+            modelo.setValueAt(getE.getNombre(), i, 1);
+            modelo.setValueAt(getE.getPiloto1(), i, 2);
+            modelo.setValueAt(getE.getPiloto2(), i, 3);
+            System.out.println(Funciones.equipo.get(i).toString());
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -179,4 +183,5 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
 }
