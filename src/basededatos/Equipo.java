@@ -11,14 +11,16 @@ package basededatos;
  */
 public class Equipo {
     
-    private String codeq,nombre;
+    private String codeq,nombre,piloto1,piloto2;
 
     public Equipo() {
     }
 
-    public Equipo(String codeq, String nombre) {
+    public Equipo(String codeq, String nombre, String piloto1, String piloto2) {
         this.codeq = codeq;
         this.nombre = nombre;
+        this.piloto1 = piloto1;
+        this.piloto2 = piloto2;
     }
 
     public String getCodeq() {
@@ -36,6 +38,24 @@ public class Equipo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String getPiloto1() {
+        return piloto1;
+    }
+
+    public void setPiloto1(String piloto1) {
+        this.piloto1 = piloto1;
+    }
+
+    public String getPiloto2() {
+        return piloto2;
+    }
+
+    public void setPiloto2(String piloto2) {
+        this.piloto2 = piloto2;
+    }
+
+    
     
     
     
