@@ -17,7 +17,8 @@ public class BaseDeDatos {
        //Funciones.actualizarEquipo("piloto2","Juan Borrajo","3");
        //Funciones.mostrarEquipos();
        //Funciones.borrarEquipo("3");
-       Funciones.mostrarEquipos();
+       //Funciones.mostrarEquipos();
+       Funciones.buscar("2");
         Funciones.cerrar();
        
         
