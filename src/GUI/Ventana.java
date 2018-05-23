@@ -5,17 +5,22 @@
  */
 package GUI;
 
+import basededatos.Funciones;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Clase
  */
 public class Ventana extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Ventana
-     */
+    DefaultTableModel modelo;
     public Ventana() {
         initComponents();
+        modelo =(DefaultTableModel) jTable1.getModel();
+        this.setLocationRelativeTo(null);
+        this.setTitle("F1 Data Base");
+        this.setVisible(true);
     }
 
     /**
@@ -116,6 +121,19 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+//        Funciones.conectar();
+//        String as="2123";
+//        modelo.addRow(new Object[]{as});
+////        while(Funciones.mostrarEquipos()>0){
+////        modelo.addRow(new Object[]{"1"});
+////        
+////        }
+//        
+//        
+//        //modelo.addRow(new Object[]{});
+//        Funciones.cerrar();
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
