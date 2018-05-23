@@ -75,25 +75,18 @@ public class Funciones {
         }
     }
     
-    public static void buscar(String codeq){
+    public static Equipo buscar(String codeq){
+        Equipo equipo=null;
         try {
             ResultSet result = null;
             PreparedStatement st = connect.prepareStatement("select * from equipo where codeq='"+codeq+"'");
             result = st.executeQuery();
-            System.out.print("codeq: ");
-                System.out.println(result.getString("codeq"));
-
-                System.out.print("Nombre: ");
-                System.out.println(result.getString("Nombre"));
-                
-                System.out.print("Piloto 1: ");
-                System.out.println(result.getString("piloto1"));
-                
-                System.out.print("Piloto 2: ");
-                System.out.println(result.getString("piloto2"));
+            equipo=new Equipo(result.getString("codeq"),result.getString("nombre"),result.getString("piloto1"),result.getString("piloto2"));
+            
+            
         } catch (SQLException ex) {
             Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }return equipo;
         
     }
 

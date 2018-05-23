@@ -57,7 +57,9 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "codeq=" + codeq + ", nombre=" + nombre + ", piloto1=" + piloto1 + ", piloto2=" + piloto2 + '}';
+        return "Nombre del equipo : "+nombre
+                +"\nPiloto 1 : "+piloto1
+                +"\nPiloto 2 : "+piloto2;
     }
 
     
