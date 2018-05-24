@@ -145,11 +145,11 @@ public class Añadir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         Funciones.conectar();
-        Funciones.guardarEquipo(new Equipo(jTextField4.getText(),jTextField1.getText(),jTextField2.getText(),jTextField3.getText()));
+        Funciones.guardarEquipo(new Equipo(jTextField4.getText(), jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
         Funciones.cerrar();
-        
+
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
@@ -162,7 +162,7 @@ public class Añadir extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
-         Ventana ventana=new Ventana();
+        Ventana ventana = new Ventana();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

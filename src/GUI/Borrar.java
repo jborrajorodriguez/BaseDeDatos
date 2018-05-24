@@ -115,12 +115,12 @@ public class Borrar extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Funciones.conectar();
+        Funciones.conectar();
         Funciones.borrarEquipo(jTextField1.getText());
         Funciones.cerrar();
         JOptionPane.showMessageDialog(null, "Equipo borrado");
         jTextField1.setText("");
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
