@@ -10,8 +10,8 @@ package basededatos;
  * @author juan_
  */
 public class Equipo {
-    
-    private String codeq,nombre,piloto1,piloto2;
+
+    private String codeq, nombre, piloto1, piloto2;
 
     public Equipo() {
     }
@@ -57,13 +57,9 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Nombre del equipo : "+nombre
-                +"\nPiloto 1 : "+piloto1
-                +"\nPiloto 2 : "+piloto2;
+        return "Nombre del equipo : " + nombre
+                + "\nPiloto 1 : " + piloto1
+                + "\nPiloto 2 : " + piloto2;
     }
 
-    
-    
-    
-    
 }

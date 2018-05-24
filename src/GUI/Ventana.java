@@ -16,18 +16,16 @@ import javax.swing.table.DefaultTableModel;
 public class Ventana extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
-    
 
     public Ventana() {
         initComponents();
-        modelo =(DefaultTableModel) jTable1.getModel();
-        
-        
+        modelo = (DefaultTableModel) jTable1.getModel();
+
         this.setLocationRelativeTo(null);
         this.setTitle("F1 Data Base");
-        
+
         this.setVisible(true);
-        
+
     }
 
     /**
@@ -198,9 +196,9 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-Funciones.mostrarEquipos();
+        Funciones.mostrarEquipos();
         Object O[] = null;
-        
+
         for (int i = 0; i < Funciones.equipo.size(); i++) {
             modelo.addRow(O);
             Equipo getE = (Equipo) Funciones.equipo.get(i);
@@ -208,31 +206,31 @@ Funciones.mostrarEquipos();
             modelo.setValueAt(getE.getNombre(), i, 1);
             modelo.setValueAt(getE.getPiloto1(), i, 2);
             modelo.setValueAt(getE.getPiloto2(), i, 3);
-            System.out.println(Funciones.equipo.get(i).toString());
+
         }
-        jTable1.setVisible(true);
+
         jButton1.setEnabled(false);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       this.setVisible(false);
-       Añadir ventana2=new Añadir();
+        this.setVisible(false);
+        Añadir ventana2 = new Añadir();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setVisible(false);
-       Buscar ventana3=new Buscar();
+        Buscar ventana3 = new Buscar();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);
-       Borrar ventana4=new Borrar();
+        Borrar ventana4 = new Borrar();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
-       Actualizar ventana5=new Actualizar();
+        Actualizar ventana5 = new Actualizar();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
