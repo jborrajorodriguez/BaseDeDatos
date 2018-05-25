@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  * @author {Juan Borrajo Rodriguez}
@@ -59,7 +60,9 @@ public class Funciones {
             st.setString(4, equipo.getPiloto2());
 
             st.execute();
+            JOptionPane.showMessageDialog(null, "Equipo añadido");
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al añadir equipo");
             Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -77,7 +80,10 @@ public class Funciones {
             PreparedStatement st = connect.prepareStatement("delete from equipo where codeq=" + "'" + codeq
                     + "'");
             st.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Equipo borrado");
+           
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al borrar equipo");
             Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
