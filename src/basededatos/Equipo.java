@@ -12,7 +12,6 @@ package basededatos;
 public class Equipo {
 
     private String codeq, nombre, piloto1, piloto2;
-
     public Equipo() {
     }
 
